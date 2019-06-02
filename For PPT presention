@@ -37,8 +37,44 @@ null === undefined // false
 
 console.log(0 == false)
 
-
 Terenary Operator
 ---------------------------
+
+=============================
+if else 
+==============================
+var x = 50
+if(x===10){
+  console.log("x is 10")
+}
+else if(x===50){
+  console.log("x is 50")
+}
+else if(x===100){
+  console.log("x is 100")
+}
+else{
+  console.log("x is invalid.")
+}
+
+
+switch
+-------------------------------
+var x = 50;
+
+switch(x){
+  case 10:
+    console.log("x is 10")
+    break;
+  case 50:
+    console.log("x is 50")
+    break;
+  case 100:
+    console.log("x is 100")
+    break;
+  default:
+    console.log("x is invalid.")
+}
+----------------------------------
 
 
