@@ -1,0 +1,44 @@
+variable declaration:-
+===========================
+  if(true){
+    //var x = 3;
+    let x = 3;
+  }
+  console.log(x)
+  ------------------
+intialisation:-
+let x;
+x = 5
+console.log(x)
+----------------------
+const x; //will throw error
+------------------------
+
+
+Operators:-
+=============================
+Arithmetic Operators
+-----------------------
+console.log(4+5)
+console.log(4-5)
+console.log("Hello"+"World")
+console.log(4 +"Hello") //yes JS is a weekly typed language unlike python and Java which are strong type
+
+Comparision operator
+-------------------------
+0 == false   // true
+0 === false  // false, because they are of a different type
+1 == "1"     // true, automatic type conversion for value only
+1 === "1"    // false, because they are of a different type
+null == undefined // true
+null === undefined // false
+'0' == false // true
+'0' === false // false
+
+console.log(0 == false)
+
+
+Terenary Operator
+---------------------------
+
+
