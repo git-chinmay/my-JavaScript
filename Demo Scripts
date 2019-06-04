@@ -92,5 +92,64 @@ grocery.forEach(let grfun = (groceryitem) => {console.log("Item is: ",groceryite
 grocery.forEach(groceryitem => console.log("Item is: ",groceryitem));
 
 ------------------------------------------------------------------------
+=======================
+Object Property
+=======================
+let spaceship = {color : "yellow",
+                "fueltype" : "diesel" };
+
+console.log(spaceship.color)
+console.log(spaceship['color'])
+
+Accessing Nested Object:-
+--------------------------
+let spaceship = {
+  //key-1 List
+  passenger:[{name: 'space dog'},{age: 3}],
+  
+  //key-2 An object
+  telescope:{
+    yearBuilt: 2018,
+    model: "91031-XLT",
+    focalLength: 2032
+  },
+  
+  //key-3 Anoter object
+  crew:{
+    //key-3 Nested Object (one Insider object)
+    captain:{
+      name: 'Sandra',
+      degree: 'Computer Engineering',
+      //Method of caprain object
+      encourageTeam() {console.log('We got this!')},
+      'favorite food':['cookies','cakes','candy']
+    }
+  },
+  
+  //Key-4 An Object
+  engine:{model:'Nimbus 2000'},
+  
+  //Key-5 Nested Object(Two Insider Object)
+  nanoelectronics:{
+    //First Insider object
+    computer:{
+      terabytes:100,
+      monitor:'HD'
+    },
+    //second Insider Object
+    backup:{
+      battery:'Lithium',
+      Amphere:'50'
+    }
+    
+  }
+  
+};
+
+//Trying to access the captain's degree
+console.log(spaceship['crew']['captain']['degree'])
+
+
+
 
 
