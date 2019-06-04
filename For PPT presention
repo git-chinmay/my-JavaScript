@@ -76,5 +76,21 @@ switch(x){
     console.log("x is invalid.")
 }
 ----------------------------------
+forEACH Loop
+===========================
+let grocery = ['sugar','salt','walnut'];
+/*
+grocery.forEach(pass the function)
+
+//step-1 Make the arrow Function
+let grfun = (groceryitem) => {console.log("Item is: ",groceryitem)};
+
+//step-2 Pass the arrow function to forEach
+grocery.forEach(let grfun = (groceryitem) => {console.log("Item is: ",groceryitem)});
+*/
+//step-3 Remove unnecessery items
+grocery.forEach(groceryitem => console.log("Item is: ",groceryitem));
+
+------------------------------------------------------------------------
 
 
