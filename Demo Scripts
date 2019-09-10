@@ -150,6 +150,36 @@ let spaceship = {
 console.log(spaceship['crew']['captain']['degree'])
 
 
+============================NodeJS===================================
+REQUIRE AND EXPORT
+main.js file:-
+
+var source = require("./targetFile");
+source.add();
+console.log(source.aval);
+
+targetFile.js:-
+
+function addition() {
+  console.log("This is addition function");
+}
+
+var a = 10;
+module.exports.add = addition;
+module.exports.aval = a;
+---------------------------------
+HTTP MODULE (SERVER CREATION)
+------------------------------
+const http = require("http");
+const server = http
+  .createServer(function(req, res) {
+    res.writeHead(200, { "content-type": "text/html" });
+    res.write("<h1>Node JS Test server Running</h1>");
+    res.end();
+  })
+  .listen(3000, () => console.log("Server is running on port 3000"));
+  
+
 
 
 
