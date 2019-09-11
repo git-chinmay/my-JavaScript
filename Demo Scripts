@@ -1,3 +1,24 @@
+null vs undefined
+========================
+var tag;
+console.log(tag)
+
+tag = null
+console.log(tag)
+
+console.log(typeof(null))
+console.log(typeof(undefined))
+console.log(1+null)
+console.log(1+undefined)
+console.log(null==undefined)
+console.log(null === undefined)
+console.log(!null) //null bydefult is false
+console.log(!!null) // !false=true >>!!false>!true>false
+console.log(!undefined)
+console.log(!!undefined) 
+
+
+
 variable declaration:-
 ===========================
   if(true){
