@@ -179,7 +179,39 @@ const server = http
   })
   .listen(3000, () => console.log("Server is running on port 3000"));
   
+--------------------------------------------
+FILESYSTEM MODULE EXAMPLE
+--------------------------------------------
+const f = require("fs");
+f.readFile(__dirname + "/ReadFileTest.txt", "utf8", (err, data) => {
+    if (err) {
+        throw err
+    }
+    else {
+        console.log(data)
+    }
+})
 
+NOTE:- CREATE THE ReadFileTest.txt first 
 
+---------------------------------------------
+READING FILE IN SERVER
+---------------------------------------------
+const f = require("fs");
+const http = require("http");
+
+const server = http.createServer(function (req, res) {
+
+    f.readFile(__dirname + "/ReadFileTest.txt", "utf8", (err, data) => {
+        res.writeHead(200, { "content-type": "text/plain" });
+        if (err) {
+            throw err
+        }
+        else {
+            res.write(data)
+        }
+        res.end();
+    })
+}).listen(3000, () => console.log("Server running at 3000"))
 
 
