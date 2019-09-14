@@ -189,6 +189,26 @@ let spaceship = {
 console.log(spaceship['crew']['captain']['degree'])
 
 
+--------------------------------------------
+FACTORY FUNCTION
+--------------------------------------------
+const monsterFactory=(name,age,sound)=> {
+  return {
+    name:name,
+    age:age,
+    scare(){
+      console.log("Monster sounds: " +sound)
+    }
+  }
+}
+
+ghost = monsterFactory("Ghoul",350,"BHOO!")
+console.log(ghost.name)
+console.log(ghost.age)
+ghost.scare()
+
+
+
 ============================NodeJS===================================
 REQUIRE AND EXPORT
 main.js file:-
