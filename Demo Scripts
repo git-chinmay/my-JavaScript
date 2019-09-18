@@ -1,3 +1,24 @@
+null vs undefined
+========================
+var tag;
+console.log(tag)
+
+tag = null
+console.log(tag)
+
+console.log(typeof(null))
+console.log(typeof(undefined))
+console.log(1+null)
+console.log(1+undefined)
+console.log(null==undefined)
+console.log(null === undefined)
+console.log(!null) //null bydefult is false
+console.log(!!null) // !false=true >>!!false>!true>false
+console.log(!undefined)
+console.log(!!undefined) 
+
+
+
 variable declaration:-
 ===========================
   if(true){
@@ -91,6 +112,24 @@ grocery.forEach(let grfun = (groceryitem) => {console.log("Item is: ",groceryite
 //step-3 Remove unnecessery items
 grocery.forEach(groceryitem => console.log("Item is: ",groceryitem));
 
+
+---------------------------------------------------
+For loop and forEach
+----------------------------------------------------
+for (let i=0; i<=5;i++)
+{console.log(i)}
+
+//For loop
+x = ["Mon","Tues","Wed","Thurs","Fri","Sat","Sun"]
+for (let i =0;i<x.length;i++){
+  console.log(x[i])
+}
+
+//Foreach
+var days = (day) => {console.log(day)}
+x.forEach(days)
+
+
 ------------------------------------------------------------------------
 =======================
 Object Property
@@ -150,6 +189,26 @@ let spaceship = {
 console.log(spaceship['crew']['captain']['degree'])
 
 
+--------------------------------------------
+FACTORY FUNCTION
+--------------------------------------------
+const monsterFactory=(name,age,sound)=> {
+  return {
+    name:name,
+    age:age,
+    scare(){
+      console.log("Monster sounds: " +sound)
+    }
+  }
+}
+
+ghost = monsterFactory("Ghoul",350,"BHOO!")
+console.log(ghost.name)
+console.log(ghost.age)
+ghost.scare()
+
+
+
 ============================NodeJS===================================
 REQUIRE AND EXPORT
 main.js file:-
@@ -179,7 +238,39 @@ const server = http
   })
   .listen(3000, () => console.log("Server is running on port 3000"));
   
+--------------------------------------------
+FILESYSTEM MODULE EXAMPLE
+--------------------------------------------
+const f = require("fs");
+f.readFile(__dirname + "/ReadFileTest.txt", "utf8", (err, data) => {
+    if (err) {
+        throw err
+    }
+    else {
+        console.log(data)
+    }
+})
 
+NOTE:- CREATE THE ReadFileTest.txt first 
 
+---------------------------------------------
+READING FILE IN SERVER
+---------------------------------------------
+const f = require("fs");
+const http = require("http");
+
+const server = http.createServer(function (req, res) {
+
+    f.readFile(__dirname + "/ReadFileTest.txt", "utf8", (err, data) => {
+        res.writeHead(200, { "content-type": "text/plain" });
+        if (err) {
+            throw err
+        }
+        else {
+            res.write(data)
+        }
+        res.end();
+    })
+}).listen(3000, () => console.log("Server running at 3000"))
 
 
