@@ -1,4 +1,4 @@
-**What is vanilla JS ?**
+What is vanilla JS ?
 
 JS in its pure form called vanilla JS.
 If you can write the code and run it in any current browser without additional tools or compile steps, it's vanilla js.
@@ -16,3 +16,24 @@ React is a JavaScript library for building user interfaces. It is maintained by 
 and companies. React can be used as a base in the development of single-page or mobile applications, as it is optimal for
 fetching rapidly changing data that needs to be recorded.
 
+What is Angular JS ?
+
+AngularJS is a JavaScript-based open-source front-end web framework mainly maintained by Google and by a community of individuals 
+and corporations to address many of the challenges encountered in developing single-page applications.
+Written in :- TypeScript and JavaScript
+
+What is Node Js ?
+
+Node.js is an open-source, cross-platform, JavaScript run-time environment that executes JavaScript code outside of a browser.
+Written in:- C,C++ & JavaScript
+
+What is Bootstarp ?
+
+Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. 
+It contains CSS- and (optionally) JavaScript-based design templates for typography, forms, buttons, navigation and other interface 
+components.
+
+What is Vue.js ?
+
+Vue.js is an open-source JavaScript framework for building user interfaces and single-page applications.
+Written in :- JavaScript
