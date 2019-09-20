@@ -207,6 +207,33 @@ console.log(ghost.name)
 console.log(ghost.age)
 ghost.scare()
 
+=====Havascript HTML DOM==============================================
+DOM METHOD AND PROPERTIES TO ACCESS THE CONTENT
+
+<html>
+  <body>
+    <p id="demo">"Hello World in p1"</p>
+    <p id="demo2">"Hello World in P2"</p>
+
+    <script>
+      document.getElementById("demo").innerHTML;
+      document.getElementById("demo2").innerHTML =
+        "Second para value replaced.";
+    </script>
+  </body>
+</html>
+
+
+TO DISPALY SOMETHING "WRITE" COMMAND
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      document.write(Date());
+    </script>
+  </body>
+</html>
 
 
 ============================NodeJS===================================
