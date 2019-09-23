@@ -303,6 +303,8 @@ const server = http.createServer(function (req, res) {
 ========================================================================
 SOME COOL CONSOLE FETURES
 ======================================================
+TABLE :- 
+
 var  x = [{
   "name": "Chinmay",
   "role":"dev"
@@ -314,5 +316,12 @@ var  x = [{
 
 console.table(x)
 
+--------------------------------------
+Exceution Time for code debugging
 
+console.time("Time Track")
+//code block in between two console API call
+//You should have same string as parameter while calling console.time API
+for (let i =0;i<10000000;i++){1+1}
+console.timeEnd("Time Track")
 
