@@ -300,4 +300,19 @@ const server = http.createServer(function (req, res) {
     })
 }).listen(3000, () => console.log("Server running at 3000"))
 
+========================================================================
+SOME COOL CONSOLE FETURES
+======================================================
+var  x = [{
+  "name": "Chinmay",
+  "role":"dev"
+},
+{
+  "name":"Chi",
+  "role":"app"
+ }]
+
+console.table(x)
+
+
 
