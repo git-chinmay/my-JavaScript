@@ -97,6 +97,15 @@ switch(x){
     console.log("x is invalid.")
 }
 ----------------------------------
+
+ARRAY
+-----------------------------------
+var ar = new Array(1,2,3)
+var ar1 = [1,2,3]
+console.log(ar)
+console.log(ar1)
+
+--------------------------
 forEACH Loop
 ===========================
 let grocery = ['sugar','salt','walnut'];
@@ -300,4 +309,28 @@ const server = http.createServer(function (req, res) {
     })
 }).listen(3000, () => console.log("Server running at 3000"))
 
+========================================================================
+SOME COOL CONSOLE FETURES
+======================================================
+TABLE :- 
+
+var  x = [{
+  "name": "Chinmay",
+  "role":"dev"
+},
+{
+  "name":"Chi",
+  "role":"app"
+ }]
+
+console.table(x)
+
+--------------------------------------
+Exceution Time for code debugging
+
+console.time("Time Track")
+//code block in between two console API call
+//You should have same string as parameter while calling console.time API
+for (let i =0;i<10000000;i++){1+1}
+console.timeEnd("Time Track")
 
