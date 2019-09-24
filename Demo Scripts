@@ -97,6 +97,15 @@ switch(x){
     console.log("x is invalid.")
 }
 ----------------------------------
+
+ARRAY
+-----------------------------------
+var ar = new Array(1,2,3)
+var ar1 = [1,2,3]
+console.log(ar)
+console.log(ar1)
+
+--------------------------
 forEACH Loop
 ===========================
 let grocery = ['sugar','salt','walnut'];
