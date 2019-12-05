@@ -1,0 +1,148 @@
+<!--This is single line comment.-->
+<!-- 
+   This is a multiline comment and it can
+   span through as many as lines you like.
+-->
+
+
+
+
+
+<!--SECTION-1 INTRODUCTION-->
+
+<!--Changing HTML content
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript can change HTML content.</p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+
+</body>
+</html>
+-->
+
+<!--Changing HTML Attribute vlues
+"Light position will change if you placed this line anywhere else
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>JavaScript can change HTML attribute values.</h1>
+        <p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+        <button onclick="document.getElementById('myImage').src='pic_bulbon.jpg'">
+        Turn on the light</button>
+        <img id='myImage' src='pic_bulboff.jpg' style='width:100px'> 
+        <button onclick="document.getElementById('myImage').src='pic_bulboff.jpg'">
+        Turn off the light</button>
+    </body>
+</html>-->
+
+<!--Hiding HTML element
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Hiding html element</h1>
+        <p id="hide">We can hide this line by clicking below button.</p>
+        <button onclick="document.getElementById('hide').style.display='none'">Click to Hide</button>
+        <p> </p>
+        <button onclick="document.getElementById('hide').style.display=''">Click to display</button>
+    </body>
+</html>-->
+
+<!--Displaying new Para by button click
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Displaying new html element</h1>
+        <h2 id="hide" style="display:none">Secret Revelaed.</h2>
+
+        <button onclick="document.getElementById('hide').style.display='block'">Click to display</button>
+    </body>
+</html>-->
+
+<!--SECTION-2 JS WHERE TO-->
+
+
+<!--Learning script tag-->
+<!--script tag in head
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        function myFunction(){
+            document.getElementById('para').innerHTML='Paragraph content got changed via a function.'
+        }
+        </script>
+    </head>
+    <body>
+        <h1>A WEB PAGE</h1>
+        <p id="para">A Paragraph whose content will get chnage if you click below button.</p>
+        <button onclick="myFunction()">Click Here</button>
+    </body>
+</html>-->
+
+<!--script tag in body
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>A WEBPAGE</h1>
+        <p id="para">A paragraph whose content will change by clicking below button.</p>
+        <script>
+        function myFunction(){
+            document.getElementById('para').innerHTML='Paragraph content got changed via a function.'}</script>
+        <button onclick="myFunction()">Click Here</button>
+    </body>
+</html>-->
+
+<!--calling function from ouitside
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>External JavaScript</h1>
+        <p id="para">A paragraph whose content will change by clicking below button.</p>
+        <button onclick="myFunction()">Click Here</button>
+        <p>(myFunction is stored in an external file called "myScript.js")</p>
+        <script src="myFunction.js"></script>
+        
+    </body>
+</html>-->
+
+
+<!--SECTION-3 JAVASCRIPT OUTPUT-->
+
+<!--
+    JavaScript can "display" data in different ways:
+
+    Writing into an HTML element, using innerHTML.
+    Writing into the HTML output using document.write().
+    Writing into an alert box, using window.alert().
+    Writing into the browser console, using console.log().
+
+    For testing purposes, it is convenient to use document.write()
+    Using document.write() after an HTML document is loaded, will delete all existing HTML.
+-->
+
+<!--Looping through Arry-->
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Array Looping</h1>
+        
+        <script>
+        arr= ["Looping", "through","an", "Arry","element!"]
+        arr.forEach(element => {
+        
+            console.log(element);
+            window.alert(element);
+            
+        });</script>
+        
+    </body>
+</html>
+
+

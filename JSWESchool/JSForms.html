@@ -1,0 +1,49 @@
+<!--JS FORMS
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function validateForm(){
+                var x= document.forms["myForm"]["fname"].value;
+                if(x==""){
+                    alert("Name must be filled out!")
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+            Name: <input type="text" name="fname">
+            <input type="submit" value="Submit">
+        </form>
+
+    </body>
+</html>-->
+
+<!--Constraint Validation DOM Methods(Check validity method)
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Enter a number and click OK:</h2>
+        <input id="inid" type="number" min="100" max="300" required>
+        <button onclick="myFunction()">OK</button>
+        <p>If the number is less than 100 or greater than 300, an error message will be displayed.</p>
+        <p id="pid"></p>
+
+        <script>
+            function myFunction(){
+                var x = document.getElementById("inid");
+                if(!x.checkValidity()){
+                    document.getElementById("pid").innerHTML=x.validationMessage;
+                }
+                else{
+                    document.getElementById("pid").innerHTML="It's OK.";
+                }
+            };    
+        </script>
+    </body>
+</html>-->
+
+

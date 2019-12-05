@@ -1,0 +1,139 @@
+<!--JS HTML DOM ELEMENT
+
+Finding HTML element ex:  Document.getElementById('id')
+Changing HTML element ex: Document.innerHTML
+Create/Delete element ex: Document.createElement(element) | Document.removeElement(element)
+-->
+
+<!--DOM Document Object
+
+Property	                    Description	                                                        DOM
+document.anchors	            Returns all <a> elements that have a name attribute	                1
+document.applets	            Returns all <applet> elements (Deprecated in HTML5)	                1
+document.baseURI	            Returns the absolute base URI of the document	                    3
+document.body	                Returns the <body> element	                                        1
+document.cookie	                Returns the document's cookie	                                    1
+document.doctype	            Returns the document's doctype	                                    3
+document.documentElement	    Returns the <html> element	                                        3
+document.documentMode	        Returns the mode used by the browser	                            3
+document.documentURI	        Returns the URI of the document	                                    3
+document.domain	                Returns the domain name of the document server	                    1
+document.domConfig	            Obsolete. Returns the DOM configuration	                            3
+document.embeds	                Returns all <embed> elements	                                    3
+document.forms	                Returns all <form> elements	                                        1
+document.head	                Returns the <head> element	                                        3
+document.images	                Returns all <img> elements	                                        1
+document.implementation	        Returns the DOM implementation	                                    3
+document.inputEncoding	        Returns the document's encoding (character set)	                    3
+document.lastModified	        Returns the date and time the document was updated	                3
+document.links	                Returns all <area> and <a> elements that have a href attribute	    1
+document.readyState	            Returns the (loading) status of the document	                    3
+document.referrer	            Returns the URI of the referrer (the linking document)	            1
+document.scripts	            Returns all <script> elements	                                    3
+document.strictErrorChecking	Returns if error checking is enforced	                            3
+document.title	                Returns the <title> element	                                        1
+document.URL	                Returns the complete URL of the document	                        1
+
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Finding HTML element by tag name and printing its content.</h2>
+        <P>Paragraph1 content which will be printed.</P>
+        <p>paragraph2 for testing.</p>
+        <p id="pid"></p>
+
+        <script>
+            var x = document.getElementsByTagName("p");
+            document.getElementById("pid").innerHTML = "Printing the above one of the para graph element content:"+x[0].innerHTML;
+        </script>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Finding HTML element by class name and printing its content.</h2>
+        <p class = "class1">Paragraph1 content which will be printed.</p>
+        <p>paragraph2 for testing.</p>
+
+        <p id="pid"></p>
+
+        <script>
+            var x = document.getElementsByClassName("class1");
+            document.getElementById("pid").innerHTML = "Printing the above one of the para graph element content:"+x[0].innerHTML;
+        </script>
+    </body>
+</html>-->
+
+<!--DOM Animation
+All animation should go in a container
+The container element should be created with style = "position: relative".
+The animation element should be created with style = "position: absolute".
+-->
+<!DOCTYPE html>
+<html>
+    <style>
+        #container {
+          width: 400px;
+          height: 400px;
+          position: relative;
+          background: yellow;
+        }
+        #animate {
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          background: red;
+        }
+    </style>
+
+    <body>
+        <h2>DOM Animation</h2>
+        <p><button onclick="myMove()">ClickMe</button></p>
+        <div id = "container">
+            <div id="animate"></div>
+        </div>
+        <script>
+            function myMove(){
+                var elem=document.getElementById("animate");
+                var pos=0;
+                var id = setInterval(frame,5);
+                function frame(){
+                    if(pos==350){
+                        clearInterval(id);
+                    }
+                    else
+                    {
+                        pos++;
+                        elem.style.top=pos+"px";
+                        elem.style.left=pos+"px";
+                        
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Digital Clock</h2>
+        <p id="time" style="color:crimson"><b></b></p>
+        <p id = "stop"><button onclick="stopFunction()">STOP</button> <button onclick="var id = setInterval(displayTime,1000);">START</button></p>
+        
+        <script>
+          function displayTime(){
+            var t = (new Date()).toLocaleTimeString();
+            document.getElementById("time").innerHTML=t
+          };
+          var id = setInterval(displayTime,1000);
+
+          function stopFunction(){
+              clearInterval(id)
+          }
+          
+        </script>
+    </body>
+</html>
