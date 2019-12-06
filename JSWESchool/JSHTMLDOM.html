@@ -73,67 +73,155 @@ The animation element should be created with style = "position: absolute".
 -->
 <!DOCTYPE html>
 <html>
-    <style>
-        #container {
-          width: 400px;
-          height: 400px;
-          position: relative;
-          background: yellow;
-        }
-        #animate {
-          width: 50px;
-          height: 50px;
-          position: absolute;
-          background: red;
-        }
-    </style>
+<style>
+    #container {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        background: yellow;
+    }
 
-    <body>
-        <h2>DOM Animation</h2>
-        <p><button onclick="myMove()">ClickMe</button></p>
-        <div id = "container">
-            <div id="animate"></div>
-        </div>
-        <script>
-            function myMove(){
-                var elem=document.getElementById("animate");
-                var pos=0;
-                var id = setInterval(frame,5);
-                function frame(){
-                    if(pos==350){
-                        clearInterval(id);
-                    }
-                    else
-                    {
-                        pos++;
-                        elem.style.top=pos+"px";
-                        elem.style.left=pos+"px";
-                        
-                    }
+    #animate {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background: red;
+    }
+</style>
+
+<body>
+    <h2>DOM Animation</h2>
+    <p><button onclick="myMove()">ClickMe</button></p>
+    <div id="container">
+        <div id="animate"></div>
+    </div>
+    <script>
+        function myMove() {
+            var elem = document.getElementById("animate");
+            var pos = 0;
+            var id = setInterval(frame, 5);
+            function frame() {
+                if (pos == 350) {
+                    clearInterval(id);
+                }
+                else {
+                    pos++;
+                    elem.style.top = pos + "px";
+                    elem.style.left = pos + "px";
+
                 }
             }
-        </script>
-    </body>
+        }
+    </script>
+</body>
+
 </html>
 
 <!DOCTYPE html>
 <html>
-    <body>
-        <h2>Digital Clock</h2>
-        <p id="time" style="color:crimson"><b></b></p>
-        <p id = "stop"><button onclick="stopFunction()">STOP</button> <button onclick="var id = setInterval(displayTime,1000);">START</button></p>
-        
-        <script>
-          function displayTime(){
-            var t = (new Date()).toLocaleTimeString();
-            document.getElementById("time").innerHTML=t
-          };
-          var id = setInterval(displayTime,1000);
 
-          function stopFunction(){
-              clearInterval(id)
-          }
-          
-        </script>
-    </body>
+<body>
+    <h2>Digital Clock</h2>
+    <p id="time" style="color:crimson"><b></b></p>
+    <p id="stop"><button onclick="stopFunction()">STOP</button></p>
+
+    <script>
+        function displayTime() {
+            var t = (new Date()).toLocaleTimeString();
+            document.getElementById("time").innerHTML = t
+        };
+        var id = setInterval(displayTime, 1000);
+
+        function stopFunction() {
+            clearInterval(id)
+        }
+
+    </script>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        function changeCase() {
+            var x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }    
+    </script>
+    Enter your text: <input type="text" id="fname" onchange="changeCase()">
+
+    <p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+</body>
+
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Testing Event listener method addEventListener().</h2>
+    <button id="bt1">BTN1</button>
+    <button onclick="classicOnClick()">BTN2</button>
+    <p id="para"></p>
+
+    <script>
+        document.getElementById("bt1").addEventListener("click", btnEventListner);
+        function btnEventListner() {
+            document.getElementById("para").innerHTML = "This paragraph get updated via button with addEventListner method!"
+
+        }
+
+        function classicOnClick() {
+            document.getElementById("para").innerHTML = "This paragraph get updated via classic button with onClick attribute!"
+        }
+
+
+    </script>
+</body>
+
+</html>
+
+<!doctype html>
+<html>
+<style>
+    #myDIV {
+        background-color: coral;
+        border: 1px solid;
+        padding: 50px;
+        color: white;
+        font-size: 20px;
+    }
+</style>
+<h2>TESTING removeEventListener method!</h2>
+
+<div id="myDIV">
+    <p>This div element has an onmousemove event handler that displays a random number every time you move your mouse
+        inside this orange field.</p>
+
+    <p>Click the button to remove the div's event handler.</p>
+
+    <button onclick="removeFunction()">ToRemove</button>
+
+</div>
+
+<p id="hoverdisplay"></p>
+
+<script>
+    document.getElementById("myDIV").addEventListener("mousemove", hoverFunction)
+
+    function hoverFunction() {
+        document.getElementById("hoverdisplay").innerHTML = Math.random();
+    }
+
+    function removeFunction() {
+        document.getElementById("myDIV").removeEventListener("mousemove", hoverFunction)
+    }
+</script>
+
+
 </html>
