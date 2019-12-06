@@ -70,7 +70,7 @@ document.URL	                Returns the complete URL of the document	          
 All animation should go in a container
 The container element should be created with style = "position: relative".
 The animation element should be created with style = "position: absolute".
--->
+
 <!DOCTYPE html>
 <html>
 <style>
@@ -224,4 +224,91 @@ The animation element should be created with style = "position: absolute".
 </script>
 
 
+</html>-->
+
+
+
+
+<!--DOCUMENT NODES
+According to the W3C HTML DOM standard, everything in an HTML document is a node:
+
+The entire document is a document node
+Every HTML element is an element node
+The text inside HTML elements are text nodes
+Every HTML attribute is an attribute node (deprecated)
+All comments are comment nodes
+
+<html> --Its the root node
+
+  <head>     --its the first child node
+
+    <title>DOM Tutorial</title>  --title is the child of 'head' node which is child of 'html' node and the text inside it are called 'text' node
+
+  </head>
+
+  <body> --Its the 2nd child of root node
+
+    <h1>DOM Lesson one</h1> --first child of body node
+
+    <p>Hello world!</p>     --2nd child of body node
+
+  </body>
+
 </html>
+-->
+
+<!--creating new HTML element
+<!doctype html>
+<html>
+    <body>
+        <div id="midiv">
+            <h2>Testing elemnt addition.</h2>
+            <p>This is a paragraph inside div element.</p>
+        </div>
+
+        <script>
+            var newEle=document.createElement("p")
+            var textnode = document.createTextNode("This is the new text node for newly created paragraph elemet.")
+            newEle.appendChild(textnode);
+            document.getElementById("midiv").appendChild(newEle)
+        </script>
+    </body>
+</html>-->
+
+<!--DOM collections and Node list
+getElementByTagName wil retrun a list of html elements(HTMLCollection ) but this is not the array.
+We can loop throught it but we cant perform other array methods like pop,push on it.
+    var myElementList = document.getElementByTagName("p")
+
+DOM NODE LIST
+A NodeList object is a list (collection) of nodes extracted from a document.
+A NodeList object is almost the same as an HTMLCollection object.
+Ex:-The following code selects all <p> nodes in a document:
+    var myNodeList = document.querySelectorAll("p");
+    y = myNodeList[1]; 
+
+*HTMLCollection items can be accessed by their name, id, or index number.
+*NodeList items can only be accessed by their index number.
+-->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript HTML DOM!</h2>
+
+<p>Hello World!</p>
+
+<p>Hello Norway!</p>
+
+<p id="demo"></p>
+
+<script>
+var myNodelist = document.querySelectorAll("p");
+document.getElementById("demo").innerHTML ="The innerHTML of the second paragraph is: " +myNodelist[1].innerHTML;
+myNodelist[1].style.backgroundColor = "red"
+</script>
+
+</body>
+</html>
+

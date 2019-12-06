@@ -1,0 +1,70 @@
+<!--BROWSER OBJECT MODEL
+All global JS objects,functions,variables are memebr of the windows object.Windows object belongs to Browser.
+The DOM is also belongs to BOM
+document.getElementById("header") is same as window.document.getElementById("header");
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+<p id="s"></p>
+<p id="navi"></p>
+
+<h2>The Navigator Object</h2>
+<p>The appName property returns the application name of the browser:</p>
+<p id="nav"></p>
+<p>Strange enough, "Netscape" is the application name for both IE11, Chrome, Firefox, and Safari.</p>
+
+<script>
+var w = window.innerWidth
+var h = window.innerHeight
+var sw = screen.width
+var sh = screen.height
+
+var x = document.getElementById("demo");
+x.innerHTML = "Browser inner window width: " + w + "pixels, height: " + h + "pixels.";
+
+var x = document.getElementById("s");
+x.innerHTML = "Browser screen width: " + sw + "pixels, height: " + sh + "pixels.";
+
+var y = window.navigator.appName;
+document.getElementById("nav").innerHTML = y;
+</script>
+
+</body>
+</html>-->
+
+
+<!--JS POPUP alerts
+window.alert("sometext"); or alert("sometext")
+window.confirm("sometext"); or confirm("sometext")
+When a confirm box pops up, the user will have to click either "OK" or "Cancel" to proceed.
+ok = true and cancel = false
+
+-->
+
+<!--JS COOKIES
+
+Cookies are data, stored in small text files, on your computer.
+When a web server has sent a web page to a browser, the connection is shut down, 
+and the server forgets everything about the user.
+
+Cookies were invented to solve the problem "how to remember information about the user":
+
+When a user visits a web page, his/her name can be stored in a cookie.
+Next time the user visits the page, the cookie "remembers" his/her name.
+Cookies are saved in name-value pairs like: username = John Wick
+
+When a browser requests a web page from a server, cookies belonging to the page are added to the request. This way the server gets the necessary data to "remember" information about users.
+JavaScript can create, read, and delete cookies with the document.cookie property.
+
+create: document.cookie =  "username=John Wick";
+withy expiry: document.cookie = "username=John Wick; expires=Thu, 18 Dec 2019 12:00:00 UTC";
+
+Read: var x = document.cookie;
+document.cookie will return all cookies in one string much like: cookie1=value; cookie2=value; cookie3=value;
+-->
+
