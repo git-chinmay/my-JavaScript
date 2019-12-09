@@ -1,0 +1,131 @@
+<!--Creating XMlHttpRequest
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>The XMLHttpRequest Object</h2>
+        <p id="demo">Let AJAX change this text.</p>
+        <button type="button" onclick="loadDoc()">Change Content</button>
+
+        <script>
+            function loadDoc(){
+                var req = new XMLHttpRequest();
+                req.onreadystatechange = () =>{
+                    if(req.readyState==4 && req.status==200)
+                    {
+                        document.getElementById("demo").innerHTML=req.status;
+                    }
+                    document.getElementById("demo").innerHTML=req.statusText;
+
+                };
+                req.open("GET","https://www.w3schools.com/js/js_ajax_http.asp");
+                req.send();
+            }
+        </script>
+
+    </body>
+</html>-->
+
+<!--AJAX used for Database communication
+
+<!DOCTYPE html>
+<html>
+    <style>
+        table,th,td{
+            border : 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td {
+            padding: 5px;
+        }
+    </style>
+
+    <body>
+        <h2>The XMLHttpRequest Object</h2>
+        <form action="">
+            <select name="customers" onchange="showCustomer(this.value)">
+                <option value="">Select a customer</option>
+                <option value="ALFKI">Alfreds Futterkiste</option>
+                <option value="NORTS ">North/South</option>
+                <option value="WOLZA">Wolski Zajazd</option>
+            </select>
+        </form>
+        <br>
+        <div id="txtHint" style="color: blueviolet;">Customer info will be listed here...</div>
+
+        <script>
+            function showCustomer(str) {
+                var xhttp;
+                if (str == ""){
+                    document.getElementById("txtHint").innerHTML = "";
+                    return;
+                }
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function(){
+                    if (this.readyState==4 && this.status ==200){
+                        document.getElementById("txtHint").innerHTML = this.responseText;
+
+                    }
+                };
+                xhttp.open("GET", "getcustomer.php?q="+str, true)
+                xhttp.send();
+            }    
+        </script>
+    </body>
+
+</html>
+
+The showCustomer() function does the following:
+
+Check if a customer is selected
+Create an XMLHttpRequest object
+Create the function to be executed when the server response is ready
+Send the request off to a file on the server
+Notice that a parameter (q) is added to the URL (with the content of the dropdown list)
+
+Here it will throw error because we dont have the getcustomer.php page avilable locally.
+
+The page on the server called by the JavaScript above is a PHP file called "getcustomer.php".
+The source code in "getcustomer.php" runs a query against a database, and returns the result in an HTML table:
+PHP CODE:-
+
+
+<?php
+$mysqli = new mysqli("servername", "username", "password", "dbname");
+if($mysqli->connect_error) {
+  exit('Could not connect');
+}
+
+$sql = "SELECT customerid, companyname, contactname, address, city, postalcode, country
+FROM customers WHERE customerid = ?";
+
+$stmt = $mysqli->prepare($sql);
+$stmt->bind_param("s", $_GET['q']);
+$stmt->execute();
+$stmt->store_result();
+$stmt->bind_result($cid, $cname, $name, $adr, $city, $pcode, $country);
+$stmt->fetch();
+$stmt->close();
+
+echo "<table>";
+echo "<tr>";
+echo "<th>CustomerID</th>";
+echo "<td>" . $cid . "</td>";
+echo "<th>CompanyName</th>";
+echo "<td>" . $cname . "</td>";
+echo "<th>ContactName</th>";
+echo "<td>" . $name . "</td>";
+echo "<th>Address</th>";
+echo "<td>" . $adr . "</td>";
+echo "<th>City</th>";
+echo "<td>" . $city . "</td>";
+echo "<th>PostalCode</th>";
+echo "<td>" . $pcode . "</td>";
+echo "<th>Country</th>";
+echo "<td>" . $country . "</td>";
+echo "</tr>";
+echo "</table>";
+?>
+-->
+
+<!--AJAX -->
+
