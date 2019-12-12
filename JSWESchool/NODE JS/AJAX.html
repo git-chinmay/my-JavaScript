@@ -127,5 +127,31 @@ echo "</table>";
 ?>
 -->
 
-<!--AJAX -->
+<!--AJAX EXAMPLES
+Reading a text file-->
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Reading a text file using XTMLHttprequest.</h2>
+        <button onclick="loadData()">clickHere</button>
+        <p id="display" style="color: crimson;"></p>
+        <script>
+            function loadData(){
+                var httpreq = new XMLHttpRequest();
+                httpreq.onreadystatechange = () => {
+                    if(httpreq.readyState == 4 && httpreq.status == 200){
+                        document.getElementById("display").innerHTML = httpreq.responseText;
+                    }
+                    else{
+                        document.getElementById("display").innerHTML = "Unable to read text file.";
+                    }
+                }
+
+                httpreq.open("GET","ReadingFile_AJAX.txt",true)
+                httpreq.send();
+            }    
+        </script>
+    </body>
+</html>
 
